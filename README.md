@@ -5,6 +5,15 @@ Simple interactive Gantt Chart for Project Planning.
 
 ![Demo Screenshot](/docs/screenshot.png)
 
+Install
+---
+
+$ git clone https://github.com/mettbox/meteor-gantt.git
+$ cd meteor-gantt/code/
+$ meteor
+
+Demo Login-Data: see /code/app.js  
+
 Libraries and Docs
 ---
 - http://docs.dhtmlx.com  

@@ -8,9 +8,9 @@ Simple interactive Gantt Chart for Project Planning.
 Install
 ---
 
-$ git clone https://github.com/mettbox/meteor-gantt.git
-$ cd meteor-gantt/code/
-$ meteor
+    $ git clone https://github.com/mettbox/meteor-gantt.git  
+    $ cd meteor-gantt/code/  
+    $ meteor  
 
 Demo Login-Data: see /code/app.js  
 

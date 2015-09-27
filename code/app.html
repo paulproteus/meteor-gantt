@@ -1,0 +1,100 @@
+<head>
+  <title>Meteor Gantt</title>
+</head>
+
+<body>
+</body>
+
+<template name="main">
+  {{>navigation}}
+  {{> yield}}
+</template>
+
+<template name="navigation">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{pathFor route='home'}}">Meteor Gantt</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li class="{{isActiveRoute 'about'}}"><a href="{{pathFor route='about'}}">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}}
+          <li><a href="#" class="logout">Logout</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template name="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 well">
+        <h2>Login</h2>
+        <form class="login">
+          <div class="form-control-wrapper">
+            <input type="email" name="email" id="time" class="form-control empty">
+            <div class="floating-label">E-Mail</div>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="password" name="password" id="time" class="form-control empty">
+            <div class="floating-label">Password</div>
+          </div>
+          <div class="form-control-wrapper">
+            <input type="submit" value="Submit" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 well">
+        <h1>About Meteor Gantt</h1>
+        <p><strong>Interactive Gantt Chart for Project Planning.</strong></p>
+        <p>Libraries and Docs:</p>
+        <ul>
+          <li><a href="http://docs.dhtmlx.com">http://docs.dhtmlx.com</a></li>
+          <li><a href="https://atmospherejs.com/stubborncoder/bootstrap-material-datepicker">https://atmospherejs.com/stubborncoder/bootstrap-material-datepicker</a></li>
+          <li><a href="https://fezvrasta.github.io/bootstrap-material-design">https://fezvrasta.github.io/bootstrap-material-design</a></li>
+        </ul>
+        <p>Version 0.1</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="home">
+  <div class="container-fluid">
+    <div class="row" style="margin-bottom: 20px">
+      <div class="col-md-12">
+        <form class="form-inline pull-right">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail3">Start Date</label>
+            <input type="text" class="form-control" placeholder="Start Date" name="date_start" id="date_start">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword3">End Date</label>
+            <input type="text" class="form-control" placeholder="End Date" name="date_end" id="date_end">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="well" style="">
+      <div class="row">
+        <div id="gantt_here"></div>
+      </div>
+    </div>
+  </div>
+</template>

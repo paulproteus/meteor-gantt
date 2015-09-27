@@ -1,0 +1,139 @@
+/* CSS declarations go here */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-control-wrapper {
+  margin: 30px 0;
+}
+
+#date_start,
+#date_end {
+  text-align: right;
+}
+
+/* Gantt */
+
+#gantt_here {
+  width: 100%;
+  height: 70vh;
+}
+
+.weekend{
+    background: #e0f2f1 !important;
+    border-bottom: 1px solid #cecece;
+}
+
+.gantt_task_line.gantt_selected {
+    box-shadow: 0 0 5px #009688;
+}
+
+.gantt_task_progress {
+    text-align: center;
+    z-index: 0;
+    background: #00796b;
+}
+
+.gantt_task_line {
+    background: #009688;
+    border: 1px solid #009688;
+}
+
+.gantt_grid_data .gantt_row.gantt_selected,
+.gantt_grid_data .gantt_row.odd.gantt_selected,
+.gantt_task_row.gantt_selected,
+.gantt_task_row.gantt_selected .gantt_task_cell {
+    border-right-color: #eeeeee;
+}
+
+.gantt_grid_data .gantt_row.gantt_selected, .gantt_grid_data .gantt_row.odd.gantt_selected, .gantt_task_row.gantt_selected {
+    background-color: #eeeeee;
+}
+
+.gantt_container {
+    font-family: Arial;
+    font-size: 13px;
+    border: 0 none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.gantt_btn_set {
+    margin: 10px 7px 5px 10px;
+    padding: 5px 15px 5px 10px;
+    float: left;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-width: 0;
+    border-color: #cecece;
+    border-style: solid;
+    height: 32px;
+    font-weight: 700;
+    background: #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.gantt_cal_light {
+    -webkit-tap-highlight-color: transparent;
+    background: #fff;
+    border-radius: 0px;
+    font-family: Arial;
+    border: 1px solid #cecece;
+    color: #6b6b6b;
+    font-size: 12px;
+    position: absolute;
+    z-index: 10001;
+    width: 550px;
+    height: 250px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.07);
+}
+
+
+.gantt_btn_set.gantt_save_btn_set {
+    background: #009688;
+    text-shadow: 0 -1px 0 #009688;
+    color: #fff;
+}
+
+.gantt_btn_set.gantt_delete_btn_set {
+    background: #80cbc4;
+    text-shadow: 0 -1px 0 #80cbc4;
+    color: #fff;
+}
+
+/* Datepicker */
+
+.dtp header.dtp-header {
+    background: #009688;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time {
+    background: #80cbc4;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
+.dtp table.dtp-picker-days tr > td > a.selected {
+    background: #009688;
+    color: #fff;
+}
+
+.dtp div.dtp-actual-year {
+    font-size: 1.5em;
+    color: #e0f2f1;
+}
+
+.dtp .col-sm-2 > a {
+    color: #009688;
+    text-decoration: none;
+}

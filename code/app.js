@@ -21,6 +21,12 @@ Router.route('/', {
     template: 'home',
     data: function() {},
     onBeforeAction: function(){
+        if (Meteor.loggingIn()) {
+            // If the user is currently logging in, wait for that to succeed,
+            // then reactively re-run this function.
+            return;
+        }
+
         var currentUser = Meteor.userId();
         if(currentUser){
             this.next();
@@ -66,6 +72,18 @@ Router.route('/', {
 if (Meteor.isServer) {
 
   Meteor.startup(function() {
+    // Check if we are running on Sandstorm, and export to settings
+    // so client-side can check, too.
+    //
+    // Since accounts-sandstorm handles automatic account creation, we
+    // skip creating a default username & password, too.
+    var isSandstorm = false;
+    if (process.env.SANDSTORM === "1") {
+        isSandstorm = true;
+        Meteor.settings.public.isSandstorm = true;
+        return;
+    }
+
     // create default user
     if (Meteor.users.find().count() == 0) {
       Accounts.createUser({
@@ -139,5 +157,9 @@ if (Meteor.isClient) {
           gantt.render();
       }
     });
+
+  Template.registerHelper("isSandstorm", function() {
+      return Meteor.settings.public.isSandstorm;
+  });
 
 }

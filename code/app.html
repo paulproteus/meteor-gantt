@@ -25,9 +25,11 @@
         <li class="{{isActiveRoute 'about'}}"><a href="{{pathFor route='about'}}">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        {{#unless isSandstorm}}
         {{#if currentUser}}
           <li><a href="#" class="logout">Logout</a></li>
         {{/if}}
+        {{/unless}}
       </ul>
     </div>
   </div>
@@ -38,6 +40,9 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 well">
         <h2>Login</h2>
+        {{#if isSandstorm}}
+        <p>Use the <strong>Sandstorm menu at the top</strong> to sign in to access this.</p>
+        {{/if}}
         <form class="login">
           <div class="form-control-wrapper">
             <input type="email" name="email" id="time" class="form-control empty">
